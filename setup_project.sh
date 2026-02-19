@@ -1,18 +1,24 @@
 #!/bin/bash
 #First create the files and directories
-mkdir -p attendance_tracker_v1
-touch attendance_tracker_v1/attendance_checker.py
-mkdir -p attendance_tracker_v1/Helpers
-touch attendance_tracker_v1/Helpers/assets.csv
-touch attendance_tracker_v1/Helpers/config.json
-mkdir -p attendance_tracker_v1/reports
-touch attendance_tracker_v1/reports/reports.log
+#Before creating anything, we'll first create an option where the user can insert a name for the parent directory
+read -p "Enter directory name:" input
+dir=attendance_tracker_$input
+echo "${dir}"
+
+#Then create the files and directories
+mkdir -p $dir
+touch $dir/attendance_checker.py
+mkdir -p $dir/Helpers
+touch $dir/Helpers/assets.csv
+touch $dir/Helpers/config.json
+mkdir -p $dir/reports
+touch $dir/reports/reports.log
 
 echo "Files and directories have been created successfully"
 
 #After creating the files and directories, continue with dynamic configuration. This is where one can change 
 
- FILE="attendance_tracker_v1/Helpers/config.json"
+ FILE="$dir/Helpers/config.json"
 
 echo "Do you want to update attendance thresholds? (y/n)"
 read answer
@@ -52,13 +58,13 @@ fi
 cleanup() {
     echo " Saving progress..."
 
-    archive_name="attendance_tracker_v1_archive.tar.gz"
+    archive_name="$dir_archive.tar.gz"
 
-    tar -czf "$archive_name" "attendance_tracker_v1"
+    tar -czf "$archive_name" "$dir"
 
     echo "Project archived as $archive_name"
 
-    rm -rf "attendance_tracker_v1"
+    rm -rf "$dir"
 
     echo "Incomplete directory deleted."
 
