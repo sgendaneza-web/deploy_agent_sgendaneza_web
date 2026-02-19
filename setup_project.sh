@@ -51,7 +51,7 @@ echo "Checking Python3..."
 if python3 --version >/dev/null 2>&1; then
     echo "Python3 is installed."
 else
-    echo "⚠️ Warning: Python3 is NOT installed."
+    echo "Warning: Python3 is NOT installed."
 fi
 
 #Add a trap
