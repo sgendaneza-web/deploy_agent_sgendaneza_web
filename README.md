@@ -17,6 +17,7 @@ If no, then there won't be any changes.
 
 After all that, it will run a health check to make sure python is installed.
 
-Lastly it will slow down for ten seconds and if you press CTRL + C bundle the current state of the project directory into an archive and named attendance_tracker_Cohort2_archive.
+Lastly it will slow down for ten seconds and if you press CTRL + C bundle the current state of the project directory into an archive and named attendance_tracker_Cohort2_archive.tar.gz.
 
 To conclude, this repository consists of a script that help you modify a student attendance tracker with ease and without error.
+This is the link to the video that explains the script and shows how it works: https://drive.google.com/file/d/1MHS5HPzYlrpK5FES2xOgIUx2_lLFF9sk/view?usp=sharing
